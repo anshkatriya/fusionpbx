@@ -806,15 +806,6 @@ include "root.php";
 												$sip_port = "506".($line_number + 1);
 											}
 										}
-									// Hacks : Some IP Phones does not support for separate SIP Port field in configuration, So we will bind sip port in SIP Server.  
-                                                                        
-                                                                        $device_info = explode("/", $device_template);
-                                                                        
-                                                                        $hack_device_list = array('grandstream'); // Here, you can add more device by seperating ','
-                                                                        
-                                                                        if(!empty($device_info[0]) && in_array(strtolower($device_info[0]), $hack_device_list)){
-                                                                                $row["server_address"] = $row["server_address"].":".$sip_port;
-                                                                        }
 
 									//set a lines array index is the line number
 										$lines[$line_number]['register_expires'] = $register_expires;
